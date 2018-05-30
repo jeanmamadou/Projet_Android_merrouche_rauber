@@ -7,7 +7,6 @@
     android:background="@drawable/marvel"
     tools:context="com.example.hp2017.projet.ThirdActivity">
 
-
     <Button
         android:id="@+id/button"
         android:layout_width="0dp"
