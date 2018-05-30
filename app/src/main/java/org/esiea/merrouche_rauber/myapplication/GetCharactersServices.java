@@ -91,7 +91,7 @@ public class GetCharactersServices extends IntentService {
                 copyInputStreamToFile(conn.getInputStream(),
                         new File(getCacheDir(),"application/json"));
                 Log.d("tag","Characters downloaded");
-                LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent(MainActivity.CHARACTERS_UPDATE));
+                //LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent(MainActivity.CHARACTERS_UPDATE));
             }
 
         }catch (MalformedURLException e){
