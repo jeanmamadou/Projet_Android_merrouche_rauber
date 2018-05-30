@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Projet</string>
+    <string name="characters">characters</string>
+    <string name="most_popular">most popular</string>
+    <string name="help">help</string>
+    <string name="title_activity_third">ThirdActivity</string>
 </resources>
