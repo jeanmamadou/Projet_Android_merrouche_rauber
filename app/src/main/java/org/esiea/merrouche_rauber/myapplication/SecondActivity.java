@@ -11,3 +11,4 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.characters);
     }
 }
+

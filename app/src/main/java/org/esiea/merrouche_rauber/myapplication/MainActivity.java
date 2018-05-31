@@ -15,7 +15,6 @@ import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
 public class MainActivity extends AppCompatActivity {
     private Button characters;
     private Button most_popular;

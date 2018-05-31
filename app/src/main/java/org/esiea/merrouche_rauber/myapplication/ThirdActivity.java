@@ -10,3 +10,4 @@ public class ThirdActivity extends AppCompatActivity {
         setContentView(R.layout.most_popular);
     }
 }
+
