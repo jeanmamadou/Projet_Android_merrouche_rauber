@@ -1,4 +1,6 @@
 package org.esiea.merrouche_rauber.myapplication;
+import android.app.Notification;
+import android.content.Context;
 import android.support.annotation.StringRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,6 +20,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     public static final String CHARACTERS_UPDATE = "com.octip.cours.inf4042_11.BIERS_UPDATE";
+    public static final int ID_NOTIFICATION = 1988;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,5 +62,18 @@ public class MainActivity extends AppCompatActivity {
     public void helptoast() {
         Toast toast = Toast.makeText(this,"avez vous besoin d'aide ?",5);
         toast.show();
+        notif();
+    }
+
+    public void notif(){
+        NotificationManager notificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
+
+        Notification.Builder builder = new Notification.Builder(this)
+                .setWhen(System.currentTimeMillis())
+                .setSmallIcon(R.mipmap.marvel01)
+                .setContentTitle("@string/notifTitle")
+                .setContentText("@string/notiftexte");
+
+        notificationManager.notify(ID_NOTIFICATION, builder.build());
     }
 }
