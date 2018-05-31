@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Projet</string>
+    <string name="app_name">Marvel Characters</string>
     <string name="characters">characters</string>
     <string name="most_popular">most popular</string>
     <string name="help">help</string>

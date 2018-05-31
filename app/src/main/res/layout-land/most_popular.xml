@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/land1">
+
+    <Button
+        android:id="@+id/iron"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="125dp"
+        android:layout_marginEnd="370dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bouton1"
+        app:layout_constraintBottom_toTopOf="@+id/hulk"
+        app:layout_constraintEnd_toStartOf="@+id/captain"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/captain"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="117dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bouton2"
+        app:layout_constraintBottom_toTopOf="@+id/thor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iron"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/hulk"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="370dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/bouton3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/thor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iron" />
+
+    <Button
+        android:id="@+id/thor"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/bouton4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/hulk"
+        app:layout_constraintTop_toBottomOf="@+id/captain" />
+
+</android.support.constraint.ConstraintLayout>
