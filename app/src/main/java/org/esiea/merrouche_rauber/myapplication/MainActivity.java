@@ -16,14 +16,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    private Button characters;
-    private Button most_popular;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        characters =findViewById(R.id.characters_button);
-        most_popular=findViewById(R.id.most_popular_button);
+        Button characters = findViewById(R.id.characters_button);
+        Button most_popular = findViewById(R.id.most_popular_button);
         characters.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
