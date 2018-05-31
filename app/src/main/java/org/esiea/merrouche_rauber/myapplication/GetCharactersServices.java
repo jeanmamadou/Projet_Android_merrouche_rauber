@@ -26,24 +26,10 @@ public class GetCharactersServices extends IntentService {
     // TODO: Rename actions, choose action names that describe tasks that this
     // IntentService can perform, e.g. ACTION_FETCH_NEW_ITEMS
     private static final String ACTION_get_all_characters = "org.esiea.merrouche_rauber.myapplication.action.get_all_characters";
-    //private static final String ACTION_BAZ = "org.esiea.merrouche_rauber.myapplication.action.BAZ";
 
-    // TODO: Rename parameters
-    // private static final String EXTRA_PARAM1 = "org.esiea.merrouche_rauber.myapplication.extra.PARAM1";
-    // private static final String EXTRA_PARAM2 = "org.esiea.merrouche_rauber.myapplication.extra.PARAM2";
-    // TODO: Rename actions, choose action names that describe tasks that this
     public GetCharactersServices() {
         super("GetCharactersServices");
     }
-
-    /**
-     * Starts this service to perform action Foo with the given parameters. If
-     * the service is already performing a task this action will be queued.
-     *
-     * @see IntentService
-     */
-    // TODO: Customize helper method
-
 
 
     /**
@@ -97,7 +83,7 @@ public class GetCharactersServices extends IntentService {
             conn.connect();
             if(HttpURLConnection.HTTP_OK == conn.getResponseCode()) {
                 copyInputStreamToFile(conn.getInputStream(),
-                        new File(getCacheDir(),"application/json"));
+                        new File(getCacheDir(),"characters.json"));
                 Log.d("tag","Characters downloaded");
                 LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent(MainActivity.CHARACTERS_UPDATE));
             }

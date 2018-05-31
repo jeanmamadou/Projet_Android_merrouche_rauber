@@ -17,7 +17,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    @Override
+    public static final String CHARACTERS_UPDATE = "com.octip.cours.inf4042_11.BIERS_UPDATE";
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
