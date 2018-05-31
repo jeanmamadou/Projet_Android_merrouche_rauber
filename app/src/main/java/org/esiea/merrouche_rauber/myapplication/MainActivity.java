@@ -22,22 +22,22 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        //setContentView(R.layout.activity_main);
         GetCharactersServices.startActionget_all_characters(this);
-        characters =findViewById(R.id.characters_button);
-        most_popular=findViewById(R.id.most_popular_button);
-        characters.setOnClickListener(new View.OnClickListener() {
+        //characters =findViewById(R.id.characters_button);
+        //most_popular=findViewById(R.id.most_popular_button);
+        /*characters.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openSecondActivity();
             }
-        });
-        most_popular.setOnClickListener(new View.OnClickListener() {
+        });*/
+       /* most_popular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openThirdActivity();
             }
-        });
+        });*/
     }
 
     public void openSecondActivity(){
