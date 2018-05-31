@@ -1,8 +1,0 @@
-<resources>
-    <string name="app_name">Marvel Characters</string>
-    <string name="characters">characters</string>
-    <string name="most_popular">most popular</string>
-    <string name="help">help</string>
-    <string name="title_activity_third">ThirdActivity</string>
-    <string name="userKey">34ed29a198a3a22f164026ddaa88e8e3</string> //videos games
-</resources>

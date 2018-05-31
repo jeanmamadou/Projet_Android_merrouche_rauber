@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Marvel Characters</string>
+    <string name="characters">personnages</string>
+    <string name="most_popular">les plus populaire</string>
+    <string name="help">aide</string>
+    <string name="title_activity_third">ThirdActivity</string>
+    <string name="userKey">34ed29a198a3a22f164026ddaa88e8e3</string>
+</resources>

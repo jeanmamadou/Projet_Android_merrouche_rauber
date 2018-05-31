@@ -71,8 +71,8 @@ public class MainActivity extends AppCompatActivity {
         Notification.Builder builder = new Notification.Builder(this)
                 .setWhen(System.currentTimeMillis())
                 .setSmallIcon(R.mipmap.marvel01)
-                .setContentTitle("@string/notifTitle")
-                .setContentText("@string/notiftexte");
+                .setContentTitle("vous avez besoin d'aide ?")
+                .setContentText("desolé mais l'aide n'est pas disponible pour l'instant");
 
         notificationManager.notify(ID_NOTIFICATION, builder.build());
     }
