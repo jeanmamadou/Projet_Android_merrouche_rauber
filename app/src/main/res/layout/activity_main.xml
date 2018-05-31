@@ -10,11 +10,10 @@ tools:context="org.esiea.merrouche_rauber.myapplication.MainActivity"
 tools:layout_editor_absoluteY="25dp">
 
     <Button
-    android:id="@+id/options_button"
+    android:id="@+id/help_button"
     android:layout_width="103dp"
     android:layout_height="wrap_content"
     android:layout_marginBottom="31dp"
-
     android:background="@drawable/rounded_button"
     android:text="@string/help"
     android:textColor="@color/white"

@@ -1,4 +1,5 @@
 package org.esiea.merrouche_rauber.myapplication;
+import android.support.annotation.StringRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Button characters = findViewById(R.id.characters_button);
         Button most_popular = findViewById(R.id.most_popular_button);
+        Button help = findViewById(R.id.help_button);
         characters.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -32,6 +34,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 openThirdActivity();
+            }
+        });
+        help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                helptoast();
             }
         });
     }
@@ -45,5 +53,10 @@ public class MainActivity extends AppCompatActivity {
     public void openThirdActivity(){
         Intent intent = new Intent(MainActivity.this, ThirdActivity.class);
         startActivity(intent);
+    }
+
+    public void helptoast() {
+        Toast toast = Toast.makeText(this,"avez vous besoin d'aide ?",5);
+        toast.show();
     }
 }
