@@ -1,12 +1,10 @@
 package org.esiea.merrouche_rauber.myapplication;
 
 import android.app.IntentService;
-import android.content.Intent;
 import android.content.Context;
-import android.nfc.Tag;
+import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -15,7 +13,6 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-
 import static android.content.ContentValues.TAG;
 
 /**
@@ -29,7 +26,7 @@ public class GetCharactersServices extends IntentService {
     // TODO: Rename actions, choose action names that describe tasks that this
     // IntentService can perform, e.g. ACTION_FETCH_NEW_ITEMS
     private static final String ACTION_get_all_characters = "org.esiea.merrouche_rauber.myapplication.action.get_all_characters";
-    private static final String ACTION_BAZ = "org.esiea.merrouche_rauber.myapplication.action.BAZ";
+    //private static final String ACTION_BAZ = "org.esiea.merrouche_rauber.myapplication.action.BAZ";
 
     // TODO: Rename parameters
     // private static final String EXTRA_PARAM1 = "org.esiea.merrouche_rauber.myapplication.extra.PARAM1";
@@ -47,11 +44,22 @@ public class GetCharactersServices extends IntentService {
      */
     // TODO: Customize helper method
 
-    public static void startActionget_all_characters(Context context) {
+
+
+    /**
+     * Starts this service to perform action Foo with the given parameters. If
+     * the service is already performing a task this action will be queued.
+     *
+     * @see IntentService
+     */
+    // TODO: Customize helper method
+
+    public static void startActionCharacters(Context context) {
         Intent intent = new Intent(context, GetCharactersServices.class);
         intent.setAction(ACTION_get_all_characters);
         context.startService(intent);
     }
+
 
     /**
      * Starts this service to perform action Baz with the given parameters. If
@@ -77,13 +85,13 @@ public class GetCharactersServices extends IntentService {
      */
 
     private void handleActionget_all_characters() {
-        // TODO: Handle action get_all_biers
-        /*Slog de getcharactersservices*/
+        // TODO: Handle action get_all_characters
+        /*Slog de getCharactersServices*/
         Log.d(TAG, "Thread service name:" + Thread.currentThread().getName());
         Log.i("message","log getCharactersServices");
         URL url = null;
         try {
-            url=new URL("https://private-anon-de24744689-jikan.apiary-proxy.com/character/1/pictures"); //
+            url=new URL("https://gateway.marvel.com:443/v1/public/characters?limit=100&offset=350&apikey=b68e15b2d94bdcc224b4147453f1271c"); //autre api video games GET https://api-endpoint.igdb.com/games/
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             conn.connect();
@@ -91,7 +99,7 @@ public class GetCharactersServices extends IntentService {
                 copyInputStreamToFile(conn.getInputStream(),
                         new File(getCacheDir(),"application/json"));
                 Log.d("tag","Characters downloaded");
-                //LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent(MainActivity.CHARACTERS_UPDATE));
+                LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent(MainActivity.CHARACTERS_UPDATE));
             }
 
         }catch (MalformedURLException e){
@@ -115,6 +123,4 @@ public class GetCharactersServices extends IntentService {
             e.printStackTrace();
         }
     }
-
-
 }

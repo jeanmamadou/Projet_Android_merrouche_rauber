@@ -50,5 +50,9 @@ tools:layout_editor_absoluteY="25dp">
         app:layout_constraintEnd_toStartOf="@+id/most_popular_button"
         app:layout_constraintStart_toStartOf="parent" />
 
-
+    <android.support.v7.widget.RecyclerView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:id="@+id/rv_characters"
+        />
 </android.support.constraint.ConstraintLayout>

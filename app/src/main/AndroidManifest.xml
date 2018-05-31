@@ -23,6 +23,8 @@
 
         <activity android:name=".SecondActivity" />
         <activity android:name=".ThirdActivity"></activity>
+     <service android:name=".GetCharactersServices"
+         android:exported="false"></service>
     </application>
 
 </manifest>
