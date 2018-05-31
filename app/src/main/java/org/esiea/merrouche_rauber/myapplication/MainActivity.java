@@ -1,36 +1,29 @@
 package org.esiea.merrouche_rauber.myapplication;
-
-import android.app.DatePickerDialog;
-import android.app.NotificationManager;
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.content.LocalBroadcastManager;
+import android.support.annotation.StringRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-//import android.support.v7.widget.LinearLayoutManager;
-//import android.support.v7.widget.RecyclerView;
-import android.text.format.DateUtils;
-import android.util.Log;
+import android.view.View;
+import android.app.DatePickerDialog;
+import android.app.NotificationManager;
+import android.content.Intent;
+import android.net.Uri;
+import android.support.v4.app.NotificationCompat;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-
+import android.widget.DatePicker;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    private Button characters;
-    private Button most_popular;
-    public static final String CHARACTERS_UPDATE = "com.octip.cours.inf4042_11.BIERS_UPDATE";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        IntentFilter intentFilter = new IntentFilter(CHARACTERS_UPDATE);
-        LocalBroadcastManager.getInstance(this).registerReceiver(new CharactersUpdate(),intentFilter);
-        characters =findViewById(R.id.characters_button);
-        most_popular=findViewById(R.id.most_popular_button);
+        Button characters = findViewById(R.id.characters_button);
+        Button most_popular = findViewById(R.id.most_popular_button);
+        Button help = findViewById(R.id.help_button);
         characters.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -43,10 +36,13 @@ public class MainActivity extends AppCompatActivity {
                 openThirdActivity();
             }
         });
+        help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                helptoast();
+            }
+        });
     }
-
-    //Services & Threading
-    GetCharactersServices.startActionCharacters();
 
 
     public void openSecondActivity(){
@@ -59,5 +55,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-
+    public void helptoast() {
+        Toast toast = Toast.makeText(this,"avez vous besoin d'aide ?",5);
+        toast.show();
+    }
 }

@@ -21,10 +21,9 @@
         app:layout_constraintStart_toEndOf="@+id/characters_button" />
 
     <Button
-        android:id="@+id/options_button"
+        android:id="@+id/help_button"
         android:layout_width="103dp"
         android:layout_height="wrap_content"
-
         android:layout_marginBottom="16dp"
         android:background="@drawable/rounded_button"
         android:text="@string/help"
